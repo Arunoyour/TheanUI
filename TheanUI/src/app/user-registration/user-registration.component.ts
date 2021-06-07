@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from "ngx-spinner";
+import { NotificationService } from '../services/notification.service';
+import { AppConstants } from '../shared/AppConstants';
+
 
 @Component({
   selector: 'app-user-registration',
@@ -7,9 +11,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserRegistrationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private spinner: NgxSpinnerService,
+  private toastr:NotificationService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    setTimeout(() => {
+      this.spinner.show();
+    }, 1000);
+
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 3000);
+
+    setTimeout(() => {
+      this.toastr.showSuccess("success", "success");
+      this.toastr.showSuccess(AppConstants.baseURL, "Baseurl");
+      this.toastr.showError("Error", "Error");
+      this.toastr.showInfo("Info", "Info");
+      this.toastr.showWarning("Warn", "Warn");
+    }, 4000);
   }
 
 }
