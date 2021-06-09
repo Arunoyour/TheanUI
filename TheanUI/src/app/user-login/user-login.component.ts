@@ -5,13 +5,12 @@ import { NotificationService } from '../services/notification.service';
 import { UserService } from '../services/user.service';
 import { Router } from "@angular/router";
 
-
 @Component({
-  selector: 'app-user-registration',
-  templateUrl: './user-registration.component.html',
-  styleUrls: ['./user-registration.component.scss']
+  selector: 'app-user-login',
+  templateUrl: './user-login.component.html',
+  styleUrls: ['./user-login.component.scss']
 })
-export class UserRegistrationComponent implements OnInit {
+export class UserLoginComponent implements OnInit {
 
   addForm: FormGroup;
 
@@ -22,7 +21,6 @@ export class UserRegistrationComponent implements OnInit {
     private toastr: NotificationService) {
 
     this.addForm = this.formBuilder.group({
-      fullName: [],
       email: [],
       mobileNumber: [],
       pwd: []
@@ -34,7 +32,7 @@ export class UserRegistrationComponent implements OnInit {
   }
 
   onSubmit() {
-    this.apiService.AddUser(this.addForm.value)
+    this.apiService.LoginUser(this.addForm.value)
       .subscribe(data => {
         console.log(data);
       });
