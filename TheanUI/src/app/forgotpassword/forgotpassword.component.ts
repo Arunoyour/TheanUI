@@ -4,14 +4,12 @@ import { NgxSpinnerService } from "ngx-spinner";
 import { NotificationService } from '../services/notification.service';
 import { UserService } from '../services/user.service';
 import { Router } from "@angular/router";
-
-
 @Component({
-  selector: 'app-user-registration',
-  templateUrl: './user-registration.component.html',
-  styleUrls: ['./user-registration.component.scss']
+  selector: 'app-forgotpassword',
+  templateUrl: './forgotpassword.component.html',
+  styleUrls: ['./forgotpassword.component.scss']
 })
-export class UserRegistrationComponent implements OnInit {
+export class ForgotpasswordComponent implements OnInit {
 
   addForm: FormGroup;
 
@@ -22,10 +20,8 @@ export class UserRegistrationComponent implements OnInit {
     private toastr: NotificationService) {
 
     this.addForm = this.formBuilder.group({
-      fullName: [],
       email: [],
-      mobileNumber: [],
-      pwd: []
+      mobileNumber: []
     });
   }
 
@@ -34,7 +30,7 @@ export class UserRegistrationComponent implements OnInit {
   }
 
   onSubmit() {
-    this.apiService.AddUser(this.addForm.value)
+    this.apiService.ForgortPassword(this.addForm.value)
       .subscribe(data => {
         console.log(data);
       });

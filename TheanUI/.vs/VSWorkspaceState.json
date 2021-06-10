@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\services",
+    "\\src\\app\\shared",
+    "\\src\\app\\user-registration"
+  ],
+  "SelectedNode": "\\src\\app\\user-registration\\user-registration.component.ts",
+  "PreviewInSolutionExplorer": false
+}
