@@ -22,10 +22,11 @@ export class UserRegistrationComponent implements OnInit {
     private toastr: NotificationService) {
 
     this.addForm = this.formBuilder.group({
-      fullName: [],
-      email: [],
-      mobileNumber: [],
-      pwd: []
+      FullName: [],
+      Email: [],
+      MobileNumber: [],
+      Pwd: [],
+      crux:"00000000-0000-0000-0000-000000000000"
     });
   }
 

@@ -2,16 +2,12 @@
   <h2 class="text-center" style="margin-top:1%">Login</h2>
   <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="text" formControlName="email" placeholder="Sub Category Value" name="email" class="form-control" id="email">
+      <label for="email">Email/Mobile Number :</label>
+      <input type="text" formControlName="Email" placeholder="Sub Category Value" name="email" class="form-control" id="email">
     </div>
     <div class="form-group">
       <label for="pwd">Password:</label>
       <input type="text" formControlName="pwd" placeholder="Password" name="pwd" class="form-control" id="pwd">
-    </div>
-    <div class="form-group">
-      <label for="mobileNumber">Mobile Number</label>
-      <input type="text" formControlName="mobileNumber" placeholder="Mobile Number" name="mobileNumber" class="form-control" id="mobileNumber">
     </div>
     <button class="btn btn-success" style="width:10%;margin-top:2%;margin-bottom:2%">Add</button>
   </form>
