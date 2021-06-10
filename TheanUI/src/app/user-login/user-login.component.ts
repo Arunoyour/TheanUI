@@ -21,8 +21,7 @@ export class UserLoginComponent implements OnInit {
     private toastr: NotificationService) {
 
     this.addForm = this.formBuilder.group({
-      email: [],
-      mobileNumber: [],
+      Email: [],
       pwd: []
     });
   }
