@@ -4,12 +4,17 @@ import { UserRegistrationComponent } from './user-registration/user-registration
 import { UserLoginComponent } from './user-login/user-login.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { AddlocationComponent } from './addlocation/addlocation.component';
+import { ListlocationComponent } from './listlocation/listlocation.component';
 
 const routes: Routes = [
   { path: 'registration', component: UserRegistrationComponent },
   { path: 'login', component: UserLoginComponent },
   { path: 'resetpassword', component: ChangepasswordComponent },
-  { path: 'forgotpassword', component: ForgotpasswordComponent }
+  { path: 'forgotpassword', component: ForgotpasswordComponent },
+  { path: 'addDeliveryLocation', component: AddlocationComponent},
+  { path: 'updateDeliveryLocation', component: AddlocationComponent},
+  { path: 'listDeliveryLocation', component: ListlocationComponent },
 
 
 ];

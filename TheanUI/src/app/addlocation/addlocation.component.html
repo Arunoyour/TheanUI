@@ -1,0 +1,50 @@
+<div class="col-md-11 user-container" style="margin-top:1%; margin-bottom:1%;margin-left:4%;border:2px solid">
+  <h2 class="text-center" style="margin-top:1%" *ngIf="isEdit==false">Add Delivery Location</h2>
+  <h2 class="text-center" style="margin-top:1%" *ngIf="isEdit==true">Update Delivery Location</h2>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <input type="hidden" formControlName="userGuid" name="userGuid" class="form-control" id="userGuid">
+    </div>
+    <div class="form-group" style="width:100%;margin:5px;float:left">
+      <input class="btn btn-primary" type="button" onclick="getLocation()" value="Fetch current Location" />
+    </div>
+    <div class="form-group">
+      <label for="lat">Lattitude :</label>
+      <input type="text" formControlName="lat" placeholder="Lattitude" name="lat" class="form-control" id="lat">
+    </div>
+    <div class="form-group">
+      <label for="logt">Longitude :</label>
+      <input type="text" formControlName="logt" placeholder="Longitude" name="logt" class="form-control" id="logt">
+    </div>
+    <div class="form-group">
+      <label for="houseName">House Name:</label>
+      <input type=text formControlName="houseName" placeholder="House Name" name="houseName" class=form-control id="houseName">
+    </div>
+    <div class="form-group">
+      <label for="houseNo">House No:</label>
+      <input type=text formControlName="houseNo" placeholder="House No" name="houseNo" class=form-control id="houseNo">
+    </div>
+    <div class="form-group">
+      <label for="street">Street:</label>
+      <input type=text formControlName="street" placeholder="Street" name="street" class=form-control id="street">
+    </div>
+    <div class="form-group">
+      <label for="place">Place:</label>
+      <input type=text formControlName="place" placeholder="Place" name="place" class=form-control id="place">
+    </div>
+    <div class="form-group">
+      <label for="junName">Juntion Name:</label>
+      <input type=text formControlName="junName" placeholder="Juntion Name" name="junName" class=form-control id="junName">
+    </div>
+    <div class="form-group">
+      <label for="nickName">Nick Name:</label>
+      <input readonly type=text formControlName="nickName" placeholder="Nick Name" name="nickName" class=form-control id="nickName">
+    </div>
+    <button class="btn btn-success" style="width:10%;margin-top:2%;margin-bottom:2%" *ngIf="isEdit==false">Add</button>
+    <button class="btn btn-success" style="width:10%;margin-top:2%;margin-bottom:2%" *ngIf="isEdit==true">Update</button>
+  </form>
+  <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">
+    <p style="color: white">Please Wait. </p>
+  </ngx-spinner>
+</div>
+

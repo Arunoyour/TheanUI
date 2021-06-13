@@ -6,6 +6,28 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script type="text/javascript">
+        var x = document.getElementById("demo");
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showPosition(position) {
+            var lat = document.getElementById("lat");
+            lat.value = position.coords.latitude;
+            var long = document.getElementById("logt");
+            long.value = position.coords.longitude;
+            console.log("Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude);
+
+            //var event = new Event('change');
+            //lat.dispatchEvent(event);
+            //long.dispatchEvent(event);
+        }
+  </script>
 </head>
 <body>
   <app-root></app-root>

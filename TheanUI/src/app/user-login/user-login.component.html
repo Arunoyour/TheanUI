@@ -1,5 +1,9 @@
 <div class="col-md-11 user-container" style="margin-top:1%; margin-bottom:1%;margin-left:4%;border:2px solid">
   <h2 class="text-center" style="margin-top:1%">Login</h2>
+  <div>
+    <span *ngIf="isError">{{message}}</span><br />
+    <span *ngIf="isSuccess">{{message}}</span>
+  </div>
   <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="email">Email/Mobile Number :</label>
@@ -8,6 +12,9 @@
     <div class="form-group">
       <label for="pwd">Password:</label>
       <input type="text" formControlName="pwd" placeholder="Password" name="pwd" class="form-control" id="pwd">
+    </div>
+    <div class="form-group">
+      <input type="checkbox" style="width:15px" class="form-check-input" formControlName="rememberMe">Remember me
     </div>
     <button class="btn btn-success" style="width:10%;margin-top:2%;margin-bottom:2%">Add</button>
   </form>
