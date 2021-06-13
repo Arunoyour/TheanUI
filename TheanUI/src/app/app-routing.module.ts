@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'addDeliveryLocation', component: AddlocationComponent},
   { path: 'updateDeliveryLocation', component: AddlocationComponent},
   { path: 'listDeliveryLocation', component: ListlocationComponent },
+  {path: '**', redirectTo: '/registration'}
 
 
 ];
