@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: 'registration', component: UserRegistrationComponent },
   { path: 'login', component: UserLoginComponent },
   { path: 'resetpassword', component: ChangepasswordComponent },
-  { path: 'forgotpassword', component: ForgotpasswordComponent }
+  { path: 'forgotpassword', component: ForgotpasswordComponent },
+  {path: '**', redirectTo: '/registration'}
 
 
 ];
