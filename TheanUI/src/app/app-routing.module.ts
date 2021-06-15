@@ -16,8 +16,6 @@ const routes: Routes = [
   { path: 'updateDeliveryLocation', component: AddlocationComponent},
   { path: 'listDeliveryLocation', component: ListlocationComponent },
   {path: '**', redirectTo: '/registration'}
-
-
 ];
 
 @NgModule({
