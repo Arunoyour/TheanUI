@@ -1,0 +1,8 @@
+<div *ngFor="let loc of deliveryLocations">
+  <b>{{loc.AddressShortName}}</b><br />
+  {{loc.Address.replaceAll('$$',',')}}<br />
+  {{loc.NearestJunction}}<br />
+  <button (click)="editLoc(loc)" style="margin-left: 20px;"> Edit</button>
+  <button (click)="deleteLoc(loc)" style="margin-left: 20px;"> Delete</button>
+  <hr />
+</div>

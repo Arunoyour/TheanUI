@@ -12,6 +12,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { ListlocationComponent } from './listlocation/listlocation.component';
+import { AddlocationComponent } from './addlocation/addlocation.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
     UserRegistrationComponent,
     UserLoginComponent,
     ForgotpasswordComponent,
-    ChangepasswordComponent
+    ChangepasswordComponent,
+    ListlocationComponent,
+    AddlocationComponent
   ],
   imports: [
     BrowserModule,

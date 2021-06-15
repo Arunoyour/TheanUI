@@ -3,10 +3,14 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\addlocation",
+    "\\src\\app\\changepassword",
+    "\\src\\app\\forgotpassword",
+    "\\src\\app\\listlocation",
+    "\\src\\app\\Model",
     "\\src\\app\\services",
-    "\\src\\app\\shared",
-    "\\src\\app\\user-registration"
+    "\\src\\app\\shared"
   ],
-  "SelectedNode": "\\src\\app\\user-registration\\user-registration.component.ts",
+  "SelectedNode": "\\src\\app\\changepassword\\changepassword.component.ts",
   "PreviewInSolutionExplorer": false
 }
