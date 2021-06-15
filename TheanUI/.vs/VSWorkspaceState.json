@@ -9,8 +9,8 @@
     "\\src\\app\\listlocation",
     "\\src\\app\\Model",
     "\\src\\app\\services",
-    "\\src\\app\\user-login"
+    "\\src\\app\\shared"
   ],
-  "SelectedNode": "\\src\\app\\services\\user.service.ts",
+  "SelectedNode": "\\src\\app\\changepassword\\changepassword.component.ts",
   "PreviewInSolutionExplorer": false
 }
