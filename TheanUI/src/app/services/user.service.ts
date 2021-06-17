@@ -21,8 +21,12 @@ export class UserService {
   }
 
   AddUser(user: UserDTO) {
-    const headers = { 'content-type': 'application/json', 'Access-Control-Allow-Origin': '*' };
     const body = JSON.stringify(user);
+    const headers = { 'content-type': 'application/json',
+                      'Access-Control-Allow-Origin': 'api.thean.in' ,
+                      'withCredentials':'True'
+                    };
+  
     return this.Http.post<ResponseDTO>(this.BaseURL + 'api/User/AddUser', body, { 'headers': headers });
   }
 
