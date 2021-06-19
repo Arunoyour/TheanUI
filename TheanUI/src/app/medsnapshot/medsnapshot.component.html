@@ -1,0 +1,24 @@
+<main>
+    <form action="#" id="myform" enctype="multipart/form-data">
+        <label for="capture">Capture Media</label>        
+        <input type="file" 
+        id="capture" 
+        accept="image/*" 
+        capture 
+        />
+        
+        <br/>
+     
+    </form> 
+
+ <div>
+    <button type="button" class="btn btn-primary mb-2" (click)="addMedi()">Add Address</button>
+    <section class="container border mb-4 p-3" *ngFor="let med of MedList; let i = index;">
+        <h4> {{i + 1}}</h4> <button type="button" class="btn btn-danger btn-sm" (click)="removeMedi(i)">Remove</button>
+        <input type="text" class="form-control" [(ngModel)]="med.Mediname" placeholder=""/>
+    </section>
+    <input type="button" class="btn btn-success" (click)="SubmitMedi()" value="Submit"/>
+ </div>
+    
+    
+</main>    
