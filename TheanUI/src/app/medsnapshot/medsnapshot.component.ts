@@ -1,22 +1,26 @@
 import { KeyValue } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Pipe, PipeTransform } from '@angular/core';
 import { MediService } from '../services/medi.service';
 import { MediAPIDto } from '../Model/MediDTO';
 import { Router } from "@angular/router";
 declare var jQuery: any;
+declare interface ImgCartDetail{Img:string;nme:string;Mtype:string;Mcount:number}
 
 @Component({
   selector: 'app-medsnapshot',
   templateUrl: './medsnapshot.component.html',
-  styleUrls: ['./medsnapshot.component.scss']
+  styleUrls: ['./medsnapshot.component.scss']  
 })
-export class MedsnapshotComponent implements OnInit {
 
+
+export class MedsnapshotComponent implements OnInit {
+  public ImgCartList:Array<ImgCartDetail> = [];
   constructor(
-    private apiService: MediService,
-   
+    private apiService: MediService,  
     private router: Router
-  ) { }
+  ) {   }
+
+  ImgCartLst = new Array<this>()
 
    mediDto:MediAPIDto;
    values :{[k:string]:string}={};
@@ -29,8 +33,7 @@ export class MedsnapshotComponent implements OnInit {
     (function ($) {
       $(document).ready(function(){
         console.log("Hello from jQuery!");
-        let input:any = document.getElementById('capture');
-      
+        let input:any = document.getElementById('capture');    
         
         input.addEventListener('change', (ev:any)=>{
           if(input.files.length<30)
@@ -51,6 +54,7 @@ export class MedsnapshotComponent implements OnInit {
           }
             
         });
+        $("#e1").select2();
       });
     })(jQuery);
   }
@@ -63,10 +67,21 @@ export class MedsnapshotComponent implements OnInit {
     while ( i-- ) {
       if(Object.keys(localStorage)[i].includes('medicart')){
        this.values[Object.keys(localStorage)[i]]=localStorage.getItem(keys[i]);
+
+    // console.log(keys[i]);
+       let ImgCartDetail=  {} as ImgCartDetail;
+       ImgCartDetail.Img=localStorage.getItem(keys[i]);
+       ImgCartDetail.nme=keys[i];
+       ImgCartDetail.Mtype="Strip";
+       ImgCartDetail.Mcount=1;
+       this.ImgCartList.push(ImgCartDetail);
       }
     }
     
 }
+  ImgCartDetail(ImgCartDetail: any, arg1: { Img: string; Mcount: number; Mtype: string; nme: string; }) {
+    throw new Error('Method not implemented.');
+  }
 
 addMedi() {
 this.MedList.push({
@@ -79,8 +94,6 @@ removeMedi(i: number) {
 
 SubmitMedi(){
   console.log("Am here");
-
-
 let    keys = Object.keys(localStorage),
 i = keys.length;
 var val=  new Array(i);
@@ -93,13 +106,14 @@ val[i]=localStorage.getItem(keys[i]);
 
 }
 }
-
-
-
   this.mediDto={
     MediName:this.MedList,
     MediImage:val
   };
   this.apiService.SaveMediCart(this.mediDto);
+}
+UpdateMediImgDetails(nme:any,Mtype:any,Mcount:any)
+{
+
 }
 }
