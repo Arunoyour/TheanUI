@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HashLocationStrategy, LocationStrategy  } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+//import { MatSelectModule,MatFormFieldModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,7 +16,6 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
 import { ListlocationComponent } from './listlocation/listlocation.component';
 import { AddlocationComponent } from './addlocation/addlocation.component';
 import { MedsnapshotComponent } from './medsnapshot/medsnapshot.component';
-
 
 @NgModule({
   declarations: [

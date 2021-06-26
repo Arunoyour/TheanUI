@@ -11,14 +11,42 @@
      
     </form> 
 
+    <div>
+        <div *ngFor="let item of ImgCartList; let myIndex = index">
+          {{myIndex}}
+        <img src={{item.Img}} alt="Img" width="200" height="200" />
+        <select [(ngModel)]="item.Mtype">
+            <option value="Strip">Strip</option>
+            <option value="Tablet">Tablet</option>
+    </select>
+    <input type="text" class="form-control" [(ngModel)]="item.Mcount" required placeholder="Enter Count" />
+    <button type="button" class="btn btn-primary mb-2" (click)="UpdateMediImgDetails(item.nme,item.Mtype,item.Mcount)">update item</button>
+          </div>
+    </div>
+
  <div>
-    <button type="button" class="btn btn-primary mb-2" (click)="addMedi()">Add Address</button>
+    <button type="button" class="btn btn-primary mb-2" (click)="addMedi()">Add Medicine name</button>
     <section class="container border mb-4 p-3" *ngFor="let med of MedList; let i = index;">
         <h4> {{i + 1}}</h4> <button type="button" class="btn btn-danger btn-sm" (click)="removeMedi(i)">Remove</button>
         <input type="text" class="form-control" [(ngModel)]="med.Mediname" placeholder=""/>
+        <select name="MediUnit" id="MediUnit">
+                <option value="Strip">Strip</option>
+                <option value="Tablet">Tablet</option>
+        </select>
+        <input type="text" class="form-control" [(ngModel)]="med.Mediname" required placeholder="Enter Count"/>
     </section>
     <input type="button" class="btn btn-success" (click)="SubmitMedi()" value="Submit"/>
  </div>
-    
-    
+
+ <div>
+    <h3>Select Medical Store</h3>        
+    <select  id="e1" style="width:300px">
+      <option value="AL">Alabama</option>
+      <option value="Am">Amalapuram</option>
+      <option value="An">Anakapalli</option>
+      <option value="Ak">Akkayapalem</option>
+      <option value="WY">Wyoming</option>
+  </select>
+ </div>
+
 </main>    
