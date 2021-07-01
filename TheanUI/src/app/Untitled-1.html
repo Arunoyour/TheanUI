@@ -1,0 +1,1 @@
+<div *ngIf="f.categoryName.touched && f.categoryName.invalid" style="color:red"><div *ngFor="let key of f.categoryName.errors | objToKeys"><div>{{AppConstants.getMessage(key)}}</div></div></div>

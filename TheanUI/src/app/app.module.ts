@@ -14,6 +14,8 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { ListlocationComponent } from './listlocation/listlocation.component';
 import { AddlocationComponent } from './addlocation/addlocation.component';
+import { EmailverifyComponent } from './emailverify/emailverify.component';
+import { LandingComponent } from './landing/landing.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { AddlocationComponent } from './addlocation/addlocation.component';
     ForgotpasswordComponent,
     ChangepasswordComponent,
     ListlocationComponent,
-    AddlocationComponent
+    AddlocationComponent,
+    EmailverifyComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,9 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { AddlocationComponent } from './addlocation/addlocation.component';
 import { ListlocationComponent } from './listlocation/listlocation.component';
+import { EmailverifyComponent } from './emailverify/emailverify.component';
+import { LandingComponent } from './landing/landing.component';
+
 
 const routes: Routes = [
   { path: 'registration', component: UserRegistrationComponent },
@@ -15,6 +18,8 @@ const routes: Routes = [
   { path: 'addDeliveryLocation', component: AddlocationComponent},
   { path: 'updateDeliveryLocation', component: AddlocationComponent},
   { path: 'listDeliveryLocation', component: ListlocationComponent },
+  { path: 'EmailVerify', component: EmailverifyComponent },
+  { path: 'Landing', component: LandingComponent },
   {path: '**', redirectTo: '/registration'}
 ];
 
