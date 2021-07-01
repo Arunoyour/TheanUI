@@ -61,6 +61,9 @@ export class AddlocationComponent implements OnInit {
   isEditDataPopulate() {
     var curUser = localStorage.getItem("CurrUser");
     var editLoc = localStorage.getItem("EditLocation");
+    console.log("testdetailssssssssssss");
+    console.log(curUser);
+    console.log(editLoc);
     if (editLoc != null && curUser != null) {
       this.isEdit = true;
       this.apiService.GetDeliveryLocation(curUser.toString(), editLoc).subscribe(location => {
