@@ -1,4 +1,0 @@
-#Thu Jul 01 13:29:31 IST 2021
-base.0=C\:\\WorkSpace\\TheanUI\\TheanUI\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
-path.0=classes.dex
-renamed.0=classes.dex
