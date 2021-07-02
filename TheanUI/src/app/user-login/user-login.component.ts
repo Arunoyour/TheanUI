@@ -45,9 +45,13 @@ export class UserLoginComponent implements OnInit {
     console.log(this.addForm.value);
     this.apiService.LoginUser(this.addForm.value)
       .subscribe(data => {
+        console.log(data);
         if (data["Data"] == "Invalid UserName" || data["Data"] == "Invalid Password") {
           this.isError = true;
           this.message = "Invalid credentials";
+        }
+        else if (data["Data"].indexOf("EmailId") > -1) {
+          this.router.navigate(['EmailVerify']);
         }
         else {
           if (this.addForm.controls["rememberMe"].value == true) {
