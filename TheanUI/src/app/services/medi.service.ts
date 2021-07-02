@@ -21,7 +21,7 @@ export class MediService {
   {
     const body = JSON.stringify(medicart);
     const headers = { 'content-type': 'application/json',
-                      'Access-Control-Allow-Origin': 'api.thean.in' ,
+                      'Access-Control-Allow-Origin': 'https://www.thean.in/' ,
                       'withCredentials':'True'
                     };
     return this.Http.post<ResponseDTO>(this.BaseURL + 'api/MediCart/SaveMediCart', body, { 'headers': headers });
