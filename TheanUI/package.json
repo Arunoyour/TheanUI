@@ -20,16 +20,19 @@
     "@angular/platform-browser-dynamic": "~12.0.3",
     "@angular/router": "~12.0.3",
     "@material/select": "^11.0.0",
-    "bootstrap": "^5.0.1",
+    "angular-bootstrap-datetimepicker": "^4.0.2",
+    "bootstrap": "^5.0.2",
+    "css-what": ">=5.0.1",
     "jquery": "^3.6.0",
     "jquery-ui-dist": "^1.12.1",
+    "moment": "^2.29.1",
     "ngx-spinner": "^11.0.1",
     "ngx-toastr": "^14.0.0",
+    "open-iconic": "^1.1.1",
     "rxjs": "~6.6.0",
     "select2": "^4.1.0-rc.0",
     "tslib": "^2.1.0",
-    "zone.js": "~0.11.4",
-    "css-what": ">=5.0.1"
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~12.0.3",

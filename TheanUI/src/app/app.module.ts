@@ -18,7 +18,9 @@ import { AddlocationComponent } from './addlocation/addlocation.component';
 import { EmailverifyComponent } from './emailverify/emailverify.component';
 import { LandingComponent } from './landing/landing.component';
 import { MedsnapshotComponent } from './medsnapshot/medsnapshot.component';
-
+import { HeyautoComponent } from './heyauto/heyauto.component';
+import { DlDateTimeDateModule, DlDateTimePickerModule } from 'angular-bootstrap-datetimepicker';
+import { InsuranceComponent } from './insurance/insurance.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,10 @@ import { MedsnapshotComponent } from './medsnapshot/medsnapshot.component';
     AddlocationComponent,
     MedsnapshotComponent,
     EmailverifyComponent,
-    LandingComponent
+    LandingComponent,
+    HeyautoComponent,
+    ListlocationComponent,
+    InsuranceComponent
 
   ],
   imports: [
@@ -41,7 +46,9 @@ import { MedsnapshotComponent } from './medsnapshot/medsnapshot.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    DlDateTimeDateModule,  // <--- Determines the data type of the model
+    DlDateTimePickerModule
   ],
   providers: [
     {provide : LocationStrategy , useClass: HashLocationStrategy}
