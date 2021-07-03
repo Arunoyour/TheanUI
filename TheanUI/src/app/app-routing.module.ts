@@ -9,6 +9,8 @@ import { ListlocationComponent } from './listlocation/listlocation.component';
 import { EmailverifyComponent } from './emailverify/emailverify.component';
 import { LandingComponent } from './landing/landing.component';
 import { MedsnapshotComponent } from './medsnapshot/medsnapshot.component';
+import { HeyautoComponent } from './heyauto/heyauto.component';
+import { InsuranceComponent } from './insurance/insurance.component';
 
 
 const routes: Routes = [
@@ -22,6 +24,8 @@ const routes: Routes = [
   { path: 'EmailVerify', component: EmailverifyComponent },
   { path: 'Landing', component: LandingComponent },
   { path: 'Medsnapshot',component:MedsnapshotComponent},
+  { path: 'Heyauto',component:HeyautoComponent},
+  { path: 'Insurance',component:InsuranceComponent},
   { path: '**', redirectTo: '/registration'}
 
 ];
