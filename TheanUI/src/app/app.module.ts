@@ -21,6 +21,8 @@ import { MedsnapshotComponent } from './medsnapshot/medsnapshot.component';
 import { HeyautoComponent } from './heyauto/heyauto.component';
 import { DlDateTimeDateModule, DlDateTimePickerModule } from 'angular-bootstrap-datetimepicker';
 import { InsuranceComponent } from './insurance/insurance.component';
+import { AnydelvryComponent } from './anydelvry/anydelvry.component';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { InsuranceComponent } from './insurance/insurance.component';
     LandingComponent,
     HeyautoComponent,
     ListlocationComponent,
-    InsuranceComponent
+    InsuranceComponent,
+    AnydelvryComponent
+
 
   ],
   imports: [

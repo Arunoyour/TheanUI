@@ -11,6 +11,8 @@ import { LandingComponent } from './landing/landing.component';
 import { MedsnapshotComponent } from './medsnapshot/medsnapshot.component';
 import { HeyautoComponent } from './heyauto/heyauto.component';
 import { InsuranceComponent } from './insurance/insurance.component';
+import { AnydelvryComponent } from './anydelvry/anydelvry.component';
+
 
 
 const routes: Routes = [
@@ -26,8 +28,8 @@ const routes: Routes = [
   { path: 'Medsnapshot',component:MedsnapshotComponent},
   { path: 'Heyauto',component:HeyautoComponent},
   { path: 'Insurance',component:InsuranceComponent},
+  { path: 'AnydelvryComponent',component:AnydelvryComponent},
   { path: '**', redirectTo: '/registration'}
-
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
