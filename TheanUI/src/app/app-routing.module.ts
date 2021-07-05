@@ -14,6 +14,7 @@ import { InsuranceComponent } from './insurance/insurance.component';
 import { AnydelvryComponent } from './anydelvry/anydelvry.component';
 
 
+
 const routes: Routes = [
   { path: 'registration', component: UserRegistrationComponent },
   { path: 'login', component: UserLoginComponent },

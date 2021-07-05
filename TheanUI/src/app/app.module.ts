@@ -23,6 +23,7 @@ import { DlDateTimeDateModule, DlDateTimePickerModule } from 'angular-bootstrap-
 import { InsuranceComponent } from './insurance/insurance.component';
 import { AnydelvryComponent } from './anydelvry/anydelvry.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,7 @@ import { AnydelvryComponent } from './anydelvry/anydelvry.component';
     ListlocationComponent,
     InsuranceComponent,
     AnydelvryComponent
+
 
   ],
   imports: [
