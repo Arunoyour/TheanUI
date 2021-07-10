@@ -23,7 +23,10 @@ import { DlDateTimeDateModule, DlDateTimePickerModule } from 'angular-bootstrap-
 import { InsuranceComponent } from './insurance/insurance.component';
 import { AnydelvryComponent } from './anydelvry/anydelvry.component';
 
-import {ConnectionServiceModule} from 'ng-connection-service'; 
+import {ConnectionServiceModule} from 'ng-connection-service';
+import { AtmComponent } from './atm/atm.component';
+import { RentDriverComponent } from './rent-driver/rent-driver.component';
+import { DelAnythingComponent } from './del-anything/del-anything.component'; 
 
 
 @NgModule({
@@ -40,7 +43,10 @@ import {ConnectionServiceModule} from 'ng-connection-service';
     HeyautoComponent,
     ListlocationComponent,
     InsuranceComponent,
-    AnydelvryComponent
+    AnydelvryComponent,
+    AtmComponent,
+    RentDriverComponent,
+    DelAnythingComponent
 
 
   ],
