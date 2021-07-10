@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConnectionService } from 'ng-connection-service';  
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'TheanUI';
+  title = 'Thean : We assist all your need';
+
+  isConnected = true;  
+  noInternetConnection: boolean;  
+  
+  constructor(private connectionService: ConnectionService) {  
+    this.connectionService.monitor().subscribe(isConnected => {  
+      this.isConnected = isConnected;  
+      if (this.isConnected) {  
+        this.noInternetConnection=false;  
+      }  
+      else {  
+        this.noInternetConnection=true;  
+      }  
+    })  
+  }  
 }
