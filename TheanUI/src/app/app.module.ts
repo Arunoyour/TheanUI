@@ -23,6 +23,8 @@ import { DlDateTimeDateModule, DlDateTimePickerModule } from 'angular-bootstrap-
 import { InsuranceComponent } from './insurance/insurance.component';
 import { AnydelvryComponent } from './anydelvry/anydelvry.component';
 
+import {ConnectionServiceModule} from 'ng-connection-service'; 
+
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import { AnydelvryComponent } from './anydelvry/anydelvry.component';
     NgxSpinnerModule,
     ToastrModule.forRoot(),
     DlDateTimeDateModule,  // <--- Determines the data type of the model
-    DlDateTimePickerModule
+    DlDateTimePickerModule,
+
+    ConnectionServiceModule  
   ],
   providers: [
     {provide : LocationStrategy , useClass: HashLocationStrategy}
