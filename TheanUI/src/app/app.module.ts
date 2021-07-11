@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HashLocationStrategy, LocationStrategy  } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+//import { MatSelectModule,MatFormFieldModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,8 @@ import { AddlocationComponent } from './addlocation/addlocation.component';
 import { EmailverifyComponent } from './emailverify/emailverify.component';
 import { LandingComponent } from './landing/landing.component';
 import { ObjectToKeyPipe } from './shared/objKey.pipe';
+import { MedsnapshotComponent } from './medsnapshot/medsnapshot.component';
+
 
 
 @NgModule({
@@ -26,8 +29,8 @@ import { ObjectToKeyPipe } from './shared/objKey.pipe';
     UserLoginComponent,
     ForgotpasswordComponent,
     ChangepasswordComponent,
-    ListlocationComponent,
     AddlocationComponent,
+    MedsnapshotComponent,
     EmailverifyComponent,
     LandingComponent,
     ObjectToKeyPipe
