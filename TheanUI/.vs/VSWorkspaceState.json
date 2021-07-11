@@ -5,12 +5,12 @@
     "\\src\\app",
     "\\src\\app\\addlocation",
     "\\src\\app\\changepassword",
-    "\\src\\app\\forgotpassword",
+    "\\src\\app\\emailverify",
+    "\\src\\app\\landing",
     "\\src\\app\\listlocation",
-    "\\src\\app\\Model",
-    "\\src\\app\\user-login",
-    "\\src\\app\\user-registration"
+    "\\src\\app\\services",
+    "\\src\\app\\user-login"
   ],
-  "SelectedNode": "\\src\\app\\app-routing.module.ts",
+  "SelectedNode": "\\src\\app\\services\\validation.service.ts",
   "PreviewInSolutionExplorer": false
 }

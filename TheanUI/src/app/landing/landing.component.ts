@@ -8,7 +8,7 @@ import { Router } from "@angular/router";
 })
 export class LandingComponent implements OnInit {
 
-  constructor(private router: Router,) { }
+  constructor(private router: Router, ) { }
 
   ngOnInit(): void {
   }
@@ -22,6 +22,7 @@ export class LandingComponent implements OnInit {
   }
   Medicine() {
   }
-
+  Vegetables() {
+  }
 
 }

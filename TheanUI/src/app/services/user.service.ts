@@ -1,6 +1,6 @@
 import { Component, Inject, InjectionToken, Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
-import { AppConstants } from '../shared/AppConstants';
+import { Constants } from '../shared/constants';
 import { UserDTO, ChangePasswordDTO } from '../Model/UserDTO';
 import { ResponseDTO } from '../Model/ResponseDTO';
 import { DeliveryLocationDTO, DeliveryLocationAPIDTO } from '../Model/DeliveryLocationDTO';
@@ -17,7 +17,7 @@ export class UserService {
 
   constructor(http: HttpClient) {
     this.Http = http;
-    this.BaseURL = AppConstants.baseURL;
+    this.BaseURL = Constants.baseURL;
   }
 
   AddUser(user: UserDTO) {

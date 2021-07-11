@@ -1,22 +1,54 @@
 <div class="col-md-11 user-container" style="margin-top:1%; margin-bottom:1%;margin-left:4%;border:2px solid">
   <h2 class="text-center" style="margin-top:1%">User Registration</h2>
+  <div>
+    <div *ngIf="isError" style="color:red">
+      {{message}}
+    </div>
+    <div *ngIf="isSuccess" style="color:green">
+      {{message}}
+    </div>
+  </div>
   <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
 
     <div class="form-group">
       <label for="fullName">Full Name:</label>
       <input type="text" formControlName="FullName" placeholder="Full Name" name="fullName" class="form-control" id="fullName">
+      <div *ngIf="f.FullName.touched && f.FullName.invalid" style="color:red">
+        <div *ngFor="let key of f.FullName.errors | objToKeys">
+          <div>{{AppConstants.getMessage(key)}}</div>
+        </div>
+      </div>
     </div>
     <div class="form-group">
       <label for="email">Email:</label>
-      <input type="text" formControlName="Email" placeholder="Sub Category Value" name="email" class="form-control" id="email">
+      <input type="text" formControlName="Email" placeholder="Email" name="email" class="form-control" id="email">
+      <div *ngIf="f.Email.touched && f.Email.invalid" style="color:red">
+        <div *ngFor="let key of f.Email.errors | objToKeys">
+          <div>{{AppConstants.getMessage(key)}}</div>
+        </div>
+      </div>
     </div>
     <div class="form-group">
       <label for="pwd">Password:</label>
-      <input type="text" formControlName="Pwd" placeholder="Password" name="pwd" class="form-control" id="pwd">
+      <input type="password" formControlName="Pwd" placeholder="Password" name="pwd" class="form-control" id="pwd">
+      <div *ngIf="f.Pwd.touched && f.Pwd.invalid" style="color:red">
+        <div *ngFor="let key of f.Pwd.errors | objToKeys">
+          <div>{{AppConstants.getMessage(key)}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="cpwd">Confirm Password:</label>
+      <input type="password" [(ngModel)]="cnfPassword" [ngModelOptions]="{standalone: true}" placeholder="Password" name="cpwd" class="form-control" id="cpwd">
     </div>
     <div class="form-group">
       <label for="mobileNumber">Mobile Number</label>
       <input type="text" formControlName="MobileNumber" placeholder="Mobile Number" name="mobileNumber" class="form-control" id="mobileNumber">
+      <div *ngIf="f.MobileNumber.touched && f.MobileNumber.invalid" style="color:red">
+        <div *ngFor="let key of f.MobileNumber.errors | objToKeys">
+          <div>{{AppConstants.getMessage(key)}}</div>
+        </div>
+      </div>
     </div>
     <button class="btn btn-success" style="width:10%;margin-top:2%;margin-bottom:2%">Add</button>
   </form>

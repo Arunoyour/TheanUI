@@ -48,11 +48,13 @@ export class AddlocationComponent implements OnInit {
       this.apiService.UpdateDeliveryLocation(this.addForm.value)
         .subscribe(data => {
           console.log(data);
+          this.router.navigate(['Landing']);
         });
     } else {
       this.apiService.AddDeliveryLocation(this.addForm.value)
         .subscribe(data => {
           console.log(data);
+          this.router.navigate(['Landing']);
         });
     }
 

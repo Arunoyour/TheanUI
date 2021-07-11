@@ -16,6 +16,7 @@ import { ListlocationComponent } from './listlocation/listlocation.component';
 import { AddlocationComponent } from './addlocation/addlocation.component';
 import { EmailverifyComponent } from './emailverify/emailverify.component';
 import { LandingComponent } from './landing/landing.component';
+import { ObjectToKeyPipe } from './shared/objKey.pipe';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { LandingComponent } from './landing/landing.component';
     ListlocationComponent,
     AddlocationComponent,
     EmailverifyComponent,
-    LandingComponent
+    LandingComponent,
+    ObjectToKeyPipe
   ],
   imports: [
     BrowserModule,
