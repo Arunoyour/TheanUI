@@ -11,5 +11,4 @@ export class ChangePasswordDTO {
   pPhoneNo: any;
   pOldPass: any;
   pNewPass: any;
-
 }
