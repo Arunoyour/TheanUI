@@ -3,6 +3,7 @@ export class UserDTO {
   email: any;
   mobileNumber: any;
   pwd: any;
+  cpwd: any;
   crux: any;
 }
 export class ChangePasswordDTO {
@@ -10,4 +11,5 @@ export class ChangePasswordDTO {
   pPhoneNo: any;
   pOldPass: any;
   pNewPass: any;
+
 }
