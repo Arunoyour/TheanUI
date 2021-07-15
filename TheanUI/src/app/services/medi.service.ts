@@ -1,8 +1,9 @@
 import { Component, Inject, InjectionToken, Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
-import { AppConstants } from '../shared/AppConstants';
+import { Constants } from '../shared/constants';
 import { ResponseDTO } from '../Model/ResponseDTO';
 import { MediAPIDto } from '../Model/MediDTO';
+import { constants } from 'crypto';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class MediService {
 
   constructor(http: HttpClient) {
     this.Http = http;
-    this.BaseURL = AppConstants.baseURL;
+    this.BaseURL = Constants.baseURL;
   }
 
  SaveMediCart(medicart:MediAPIDto)

@@ -1,6 +1,8 @@
 <div class="col-md-11 user-container" style="margin-top:1%; margin-bottom:1%;margin-left:4%;border:2px solid">
   <h2 class="text-center" style="margin-top:1%" *ngIf="isEdit==false">Add Delivery Location</h2>
   <h2 class="text-center" style="margin-top:1%" *ngIf="isEdit==true">Update Delivery Location</h2>
+  <input type="hidden" #mylat (change)="LatChange()" id="lat" />
+  <input type="hidden" #mylong (change)="LongChange()" id="long" />
   <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <input type="hidden" formControlName="userGuid" name="userGuid" class="form-control" id="userGuid">

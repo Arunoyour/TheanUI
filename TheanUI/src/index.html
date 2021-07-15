@@ -25,9 +25,9 @@
             long.value = position.coords.longitude;
             console.log("Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude);
 
-            //var event = new Event('change');
-            //lat.dispatchEvent(event);
-            //long.dispatchEvent(event);
+          var event = new Event('change');
+          lat.dispatchEvent(event);
+          long.dispatchEvent(event);  
         }
 
  
