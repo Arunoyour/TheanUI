@@ -9,6 +9,13 @@ import { ListlocationComponent } from './listlocation/listlocation.component';
 import { EmailverifyComponent } from './emailverify/emailverify.component';
 import { LandingComponent } from './landing/landing.component';
 import { MedsnapshotComponent } from './medsnapshot/medsnapshot.component';
+import { HeyautoComponent } from './heyauto/heyauto.component';
+import { InsuranceComponent } from './insurance/insurance.component';
+import { AnydelvryComponent } from './anydelvry/anydelvry.component';
+import { AtmComponent } from './atm/atm.component';
+import { RentDriverComponent } from './rent-driver/rent-driver.component';
+import { DelAnythingComponent } from './del-anything/del-anything.component';
+
 
 
 const routes: Routes = [
@@ -22,8 +29,13 @@ const routes: Routes = [
   { path: 'EmailVerify', component: EmailverifyComponent },
   { path: 'Landing', component: LandingComponent },
   { path: 'Medsnapshot',component:MedsnapshotComponent},
+  { path: 'Heyauto',component:HeyautoComponent},
+  { path: 'Insurance',component:InsuranceComponent},
+  { path: 'AnydelvryComponent',component:AnydelvryComponent},
+  { path: 'atm',component:AtmComponent},
+  { path: 'RentDriver',component:RentDriverComponent},
+  { path: 'Delanything',component:DelAnythingComponent},
   { path: '**', redirectTo: '/registration'}
-
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

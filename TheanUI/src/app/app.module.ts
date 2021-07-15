@@ -19,6 +19,15 @@ import { EmailverifyComponent } from './emailverify/emailverify.component';
 import { LandingComponent } from './landing/landing.component';
 import { ObjectToKeyPipe } from './shared/objKey.pipe';
 import { MedsnapshotComponent } from './medsnapshot/medsnapshot.component';
+import { HeyautoComponent } from './heyauto/heyauto.component';
+import { DlDateTimeDateModule, DlDateTimePickerModule } from 'angular-bootstrap-datetimepicker';
+import { InsuranceComponent } from './insurance/insurance.component';
+import { AnydelvryComponent } from './anydelvry/anydelvry.component';
+
+import {ConnectionServiceModule} from 'ng-connection-service';
+import { AtmComponent } from './atm/atm.component';
+import { RentDriverComponent } from './rent-driver/rent-driver.component';
+import { DelAnythingComponent } from './del-anything/del-anything.component'; 
 
 
 
@@ -33,7 +42,16 @@ import { MedsnapshotComponent } from './medsnapshot/medsnapshot.component';
     MedsnapshotComponent,
     EmailverifyComponent,
     LandingComponent,
-    ObjectToKeyPipe
+    ObjectToKeyPipe,
+    HeyautoComponent,
+    ListlocationComponent,
+    InsuranceComponent,
+    AnydelvryComponent,
+    AtmComponent,
+    RentDriverComponent,
+    DelAnythingComponent
+
+
   ],
   imports: [
     BrowserModule,
@@ -43,7 +61,11 @@ import { MedsnapshotComponent } from './medsnapshot/medsnapshot.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    DlDateTimeDateModule,  // <--- Determines the data type of the model
+    DlDateTimePickerModule,
+
+    ConnectionServiceModule  
   ],
   providers: [
     {provide : LocationStrategy , useClass: HashLocationStrategy}

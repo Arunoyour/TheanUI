@@ -1,1 +1,8 @@
+<div *ngIf="!noInternetConnection">
 <router-outlet></router-outlet>
+</div>
+<div *ngIf="noInternetConnection" style="text-align: center;width: auto;">    
+    <h1>THERE IS NO INTERNET CONNECTION</h1>    
+   <img width="auto" src="../assets/no_internet.gif" alt="N0 INTERNET" />     
+</div>  
+

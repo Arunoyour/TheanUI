@@ -1,0 +1,11 @@
+<label>Book Insurance Date : </label>
+<div style="width: 300px;">
+    <dl-date-time-picker
+    startView="day"
+    maxView="year"
+    minView="minute"
+    [(ngModel)]="selectedDate">
+</dl-date-time-picker>
+{{selectedDate}}
+<button name="Submit"  (click)="Submit()">Book Now</button>
+</div>
