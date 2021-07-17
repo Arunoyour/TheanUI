@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { NgxSpinnerService } from "ngx-spinner";
 import { NotificationService } from '../services/notification.service';
@@ -13,6 +13,9 @@ import { DeliveryLocationDTO } from '../Model/DeliveryLocationDTO';
   styleUrls: ['./addlocation.component.scss']
 })
 export class AddlocationComponent implements OnInit {
+
+  @ViewChild('mylat') mylat: ElementRef;
+  @ViewChild('mylong') mylong: ElementRef;
 
   addForm: FormGroup;
   isEdit: boolean = false;
@@ -48,14 +51,25 @@ export class AddlocationComponent implements OnInit {
       this.apiService.UpdateDeliveryLocation(this.addForm.value)
         .subscribe(data => {
           console.log(data);
+          this.router.navigate(['Landing']);
         });
     } else {
       this.apiService.AddDeliveryLocation(this.addForm.value)
         .subscribe(data => {
           console.log(data);
+          this.router.navigate(['Landing']);
         });
     }
 
+  }
+
+  LatChange() {
+    var ctrl = this.addForm.controls['lat'];
+    ctrl.setValue(this.mylat.nativeElement.value);
+  }
+  LongChange() {
+    var ctrl = this.addForm.controls['logt'];
+    ctrl.setValue(this.mylong.nativeElement.value);
   }
 
   isEditDataPopulate() {

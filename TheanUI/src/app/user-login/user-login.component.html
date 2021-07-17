@@ -1,17 +1,31 @@
 <div class="col-md-11 user-container" style="margin-top:1%; margin-bottom:1%;margin-left:4%;border:2px solid">
-  <h2 class="text-center" style="margin-top:1%">Login</h2>
+  <h2 class="text-center" style="margin-top:1%">Login</h2>     <button name="forgot" style="float:right" (click)="forgotPassword()">ForgotPassword</button>
   <div>
-    <span *ngIf="isError">{{message}}</span><br />
-    <span *ngIf="isSuccess">{{message}}</span>
+    <div *ngIf="isError" style="color:red">
+      {{message}}
+    </div>
+    <div *ngIf="isSuccess" style="color:green">
+      {{message}}
+    </div>
   </div>
   <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="email">Email/Mobile Number :</label>
-      <input type="text" formControlName="Email" placeholder="Sub Category Value" name="email" class="form-control" id="email">
+      <input type="text" required formControlName="Email" placeholder="Email/Mobile Number" name="email" class="form-control" id="email">
+      <div *ngIf="f.Email.touched && f.Email.invalid" style="color:red">
+        <div *ngFor="let key of f.Email.errors | objToKeys">
+          <div>{{AppConstants.getMessage(key)}}</div>
+        </div>
+      </div>
     </div>
     <div class="form-group">
       <label for="pwd">Password:</label>
-      <input type="text" formControlName="pwd" placeholder="Password" name="pwd" class="form-control" id="pwd">
+      <input type="password" required formControlName="pwd" placeholder="Password" name="pwd" class="form-control" id="pwd">
+      <div *ngIf="f.pwd.touched && f.pwd.invalid" style="color:red">
+        <div *ngFor="let key of f.pwd.errors | objToKeys">
+          <div>{{AppConstants.getMessage(key)}}</div>
+        </div>
+      </div>
     </div>
     <div class="form-group">
       <input type="checkbox" style="width:15px" class="form-check-input" formControlName="rememberMe">Remember me

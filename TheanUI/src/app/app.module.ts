@@ -17,6 +17,7 @@ import { ListlocationComponent } from './listlocation/listlocation.component';
 import { AddlocationComponent } from './addlocation/addlocation.component';
 import { EmailverifyComponent } from './emailverify/emailverify.component';
 import { LandingComponent } from './landing/landing.component';
+import { ObjectToKeyPipe } from './shared/objKey.pipe';
 import { MedsnapshotComponent } from './medsnapshot/medsnapshot.component';
 import { HeyautoComponent } from './heyauto/heyauto.component';
 import { DlDateTimeDateModule, DlDateTimePickerModule } from 'angular-bootstrap-datetimepicker';
@@ -27,6 +28,7 @@ import {ConnectionServiceModule} from 'ng-connection-service';
 import { AtmComponent } from './atm/atm.component';
 import { RentDriverComponent } from './rent-driver/rent-driver.component';
 import { DelAnythingComponent } from './del-anything/del-anything.component'; 
+
 
 
 @NgModule({
@@ -40,6 +42,7 @@ import { DelAnythingComponent } from './del-anything/del-anything.component';
     MedsnapshotComponent,
     EmailverifyComponent,
     LandingComponent,
+    ObjectToKeyPipe,
     HeyautoComponent,
     ListlocationComponent,
     InsuranceComponent,

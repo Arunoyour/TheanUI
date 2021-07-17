@@ -4,6 +4,8 @@ import { NgxSpinnerService } from "ngx-spinner";
 import { NotificationService } from '../services/notification.service';
 import { UserService } from '../services/user.service';
 import { Router } from "@angular/router";
+import { validate } from 'json-schema';
+import { Constants } from '../shared/constants';
 
 @Component({
   selector: 'app-user-login',
@@ -19,17 +21,25 @@ export class UserLoginComponent implements OnInit {
   isSuccess: boolean = false;
   message: string = '';
 
+  AppConstants: any;
+
   constructor(private formBuilder: FormBuilder,
     private apiService: UserService,
     private router: Router,
     private spinner: NgxSpinnerService,
     private toastr: NotificationService) {
 
+    this.AppConstants = Constants;
+
     this.addForm = this.formBuilder.group({
-      Email: [],
-      pwd: [],
+      Email: ['', Validators.required],
+      pwd: ['', Validators.required],
       rememberMe: new FormControl(false)
     });
+  }
+
+  get f() {
+    return this.addForm.controls;
   }
 
   ngOnInit() {
@@ -43,26 +53,33 @@ export class UserLoginComponent implements OnInit {
 
   onSubmit() {
     console.log(this.addForm.value);
-    this.apiService.LoginUser(this.addForm.value)
-      .subscribe(data => {
-        console.log(data);
-        if (data["Data"] == "Invalid UserName" || data["Data"] == "Invalid Password") {
-          this.isError = true;
-          this.message = "Invalid credentials";
-        }
-        else if (data["Data"].indexOf("EmailId") > -1) {
-          this.router.navigate(['EmailVerify']);
-        }
-        else {
-          if (this.addForm.controls["rememberMe"].value == true) {
-            var object = { value: data["Data"], timestamp: new Date().getTime() }
-            localStorage.setItem("RemMe", JSON.stringify(object));
-            console.log(data);
+    if (this.addForm.valid) {
+      this.spinner.show();
+      this.apiService.LoginUser(this.addForm.value)
+        .subscribe(data => {
+          this.spinner.hide()
+          console.log(data);
+          if (data["Data"] == "Invalid UserName" || data["Data"] == "Invalid Password") {
+            this.isError = true;
+            this.message = "Invalid credentials";
           }
-          localStorage.setItem("CurrUser", data["Data"]);
-          this.afterSuccessfulLogin();
-        }
-      });
+          else if (data["Data"].indexOf("EmailId") > -1) {
+            this.router.navigate(['EmailVerify']);
+          }
+          else {
+            if (this.addForm.controls["rememberMe"].value == true) {
+              var object = { value: data["Data"], timestamp: new Date().getTime() }
+              localStorage.setItem("RemMe", JSON.stringify(object));
+              console.log(data);
+            }
+            localStorage.setItem("CurrUser", data["Data"]);
+            this.afterSuccessfulLogin();
+          }
+        });
+    } else {
+      this.isError = true;
+      this.message = "Please enter the credentials";
+    }
   }
 
   rememberMe() {
@@ -112,5 +129,9 @@ export class UserLoginComponent implements OnInit {
     var sec = Math.floor((minutesms) / (1000));
     //return days + ":" + hours + ":" + minutes + ":" + sec;
     return (hoursms) / (60 * 1000);
+  }
+
+  forgotPassword() {
+    this.router.navigate(['forgotpassword']);
   }
 }
