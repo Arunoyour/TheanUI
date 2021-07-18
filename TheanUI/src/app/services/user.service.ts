@@ -96,4 +96,18 @@ export class UserService {
     return this.Http.post<ResponseDTO>(this.BaseURL + 'api/User/GetDelLocByUsr', body, { 'headers': headers });
   }
 
+  VerifyUser(guid: string, OTP: string,type:string){
+    const headers = { 'content-type': 'application/json', 'Access-Control-Allow-Origin': 'https://www.thean.in/' };
+    var obj = { "crux": guid,"otp":OTP,"type":type };
+    const body = JSON.stringify(obj);
+    return this.Http.post<ResponseDTO>(this.BaseURL + 'api/User/VerifyUser', body, { 'headers': headers });
+  }
+
+  verifySummary(guid:string){
+    const headers = { 'content-type': 'application/json', 'Access-Control-Allow-Origin': 'https://www.thean.in/' };
+    var obj = { "crux": guid};
+    const body = JSON.stringify(obj);
+    return this.Http.post<ResponseDTO>(this.BaseURL + 'api/User/verifySummary', body, { 'headers': headers });
+  }
+
 }
