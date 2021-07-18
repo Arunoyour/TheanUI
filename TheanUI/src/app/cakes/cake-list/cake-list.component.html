@@ -1,0 +1,17 @@
+<input type="text" placeholder="search" />
+<button>Search</button>
+<hr />
+<div *ngFor="let cake of allCakes" style="float:left;border:1px black solid;text-align:center">
+  <b>{{cake.ItemName}}</b><br />
+  <img [src]="cake.Image" style="height:128px;width:128px;cursor:pointer;margin-left:5px" (click)="ImageClick(cake.Image)" /><br />
+  <div style="text-align:left;float:left">
+    <img *ngIf="cake.ItemType=='Veg'" src="/assets/Images/Veg.png" style="height:15px;width:15px;cursor:pointer;margin-left:5px" />
+    <img *ngIf="cake.ItemType!='Veg'" src="/assets/Images/Non.png" style="height:15px;width:15px;cursor:pointer;margin-left:5px" />
+  </div><br />
+  <div style="float:left">
+    {{cake.OfferPricetoCustomer | currency: 'INR'}}
+  </div>
+  <div style="float:right">
+    <button style="float:right" (click)="goToDetails(cake)">Add</button>
+  </div>
+</div>

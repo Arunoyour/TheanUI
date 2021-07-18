@@ -1,0 +1,51 @@
+<table>
+  <tr>
+    <td style="width:90px;vertical-align:top">
+      <span *ngFor="let n of imageArr" style="width:100%;float:left;margin-bottom:2px">
+        <img [src]="n" style="height:70px;width:70px;cursor:pointer;margin-left:5px" (click)="ImageClick(n)" />
+      </span>
+    </td>
+    <td style="vertical-align:top">
+      <span style="width:100%;float:left;margin-bottom:2px">
+        <img [src]="selImage" style="height:300px;width:300px;cursor:pointer;margin-left:5px" />
+      </span>
+    </td>
+    <td style="vertical-align:top">
+      <table>
+        <tr><td><b>{{cakeItem.ItemName}}</b></td></tr>
+        <tr>
+          <td><div>product contains.</div><div>{{cakeItem.ItemName}}</div></td>
+        </tr>
+        <tr>
+          <td>
+            <b style="font-size:large">{{cakeItem.OfferPricetoCustomer | currency: 'INR'}}</b>
+            <span style="text-decoration:line-through">&ensp;Rs.{{cakeItem.SellingPricetoCustomer}}</span>
+            &ensp;<b>({{perc}}% OFF)</b>
+            <hr />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>Weight</div>
+            <button style="float:left;background-color:transparent" [style.color]="selWeight =='0'?'green':'black'" (click)="selectWeight(0)"><b style="font-size:small">.5 Kg</b></button>
+            <button style="float:left;background-color:transparent" [style.color]="selWeight =='1'?'green':'black'" (click)="selectWeight(1)"><b style="font-size:small">1 Kg</b></button>
+            <button style="float:left;background-color:transparent" [style.color]="selWeight =='2'?'green':'black'" (click)="selectWeight(2)"><b style="font-size:small">2 Kg</b></button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>Message on cake</div>
+            <input type="text" [(ngModel)]="message" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button>Buy Now</button>
+          </td>
+        </tr>
+
+      </table>
+
+    </td>
+  </tr>
+</table>

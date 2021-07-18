@@ -7,10 +7,10 @@
     "\\src\\app\\changepassword",
     "\\src\\app\\emailverify",
     "\\src\\app\\landing",
-    "\\src\\app\\listlocation",
+    "\\src\\app\\Model",
     "\\src\\app\\services",
     "\\src\\app\\user-login"
   ],
-  "SelectedNode": "\\src\\app\\services\\validation.service.ts",
+  "SelectedNode": "\\src\\app\\addlocation\\addlocation.component.ts",
   "PreviewInSolutionExplorer": false
 }
