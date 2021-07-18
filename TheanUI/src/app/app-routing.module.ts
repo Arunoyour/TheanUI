@@ -15,6 +15,11 @@ import { AnydelvryComponent } from './anydelvry/anydelvry.component';
 import { AtmComponent } from './atm/atm.component';
 import { RentDriverComponent } from './rent-driver/rent-driver.component';
 import { DelAnythingComponent } from './del-anything/del-anything.component';
+import { CakeListComponent } from './cakes/cake-list/cake-list.component';
+import { CakeDetailComponent } from './cakes/cake-detail/cake-detail.component';
+import { ShopListComponent } from './shops/shop-list/shop-list.component';
+import { ShopHomeComponent } from './shops/shop-home/shop-home.component';
+import { ShopItemsComponent } from './shops/shop-items/shop-items.component';
 
 
 
@@ -34,7 +39,12 @@ const routes: Routes = [
   { path: 'AnydelvryComponent',component:AnydelvryComponent},
   { path: 'atm',component:AtmComponent},
   { path: 'RentDriver',component:RentDriverComponent},
-  { path: 'Delanything',component:DelAnythingComponent},
+  { path: 'Delanything', component: DelAnythingComponent },
+  { path: 'CakeHome', component: CakeListComponent },
+  { path: 'CakeDetail', component: CakeDetailComponent },
+  { path: 'ShopList', component: ShopListComponent },
+  { path: 'ShopHome', component: ShopHomeComponent },
+  { path: 'ShopItem', component: ShopItemsComponent },
   { path: '**', redirectTo: '/registration'}
 ];
 @NgModule({

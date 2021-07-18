@@ -19,6 +19,10 @@ export class LandingComponent implements OnInit {
   ATM() {
   }
   Bakes() {
+    this.router.navigate(['CakeHome']);
+  }
+  Shops() {
+    this.router.navigate(['ShopList']);
   }
   Medicine() {
   }

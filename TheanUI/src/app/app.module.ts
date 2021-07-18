@@ -27,7 +27,12 @@ import { AnydelvryComponent } from './anydelvry/anydelvry.component';
 import {ConnectionServiceModule} from 'ng-connection-service';
 import { AtmComponent } from './atm/atm.component';
 import { RentDriverComponent } from './rent-driver/rent-driver.component';
-import { DelAnythingComponent } from './del-anything/del-anything.component'; 
+import { DelAnythingComponent } from './del-anything/del-anything.component';
+import { CakeListComponent } from './cakes/cake-list/cake-list.component';
+import { CakeDetailComponent } from './cakes/cake-detail/cake-detail.component';
+import { ShopListComponent } from './shops/shop-list/shop-list.component';
+import { ShopHomeComponent } from './shops/shop-home/shop-home.component';
+import { ShopItemsComponent } from './shops/shop-items/shop-items.component'; 
 
 
 
@@ -49,7 +54,12 @@ import { DelAnythingComponent } from './del-anything/del-anything.component';
     AnydelvryComponent,
     AtmComponent,
     RentDriverComponent,
-    DelAnythingComponent
+    DelAnythingComponent,
+    CakeListComponent,
+    CakeDetailComponent,
+    ShopListComponent,
+    ShopHomeComponent,
+    ShopItemsComponent
 
 
   ],
