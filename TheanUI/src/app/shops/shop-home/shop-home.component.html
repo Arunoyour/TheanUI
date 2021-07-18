@@ -1,0 +1,14 @@
+<input type="text" placeholder="search" />
+<button>Search</button>
+<hr />
+<div *ngFor="let item of allItemsInshop" style="float:left;border:1px black solid;text-align:center">
+  <b>{{item.ItemName}}</b><br />
+  <img [src]="item.Image" style="height:128px;width:128px;cursor:pointer;margin-left:5px" (click)="ImageClick(item.Image)" /><br />
+  <div style="float:left">
+    {{item.OfferPricetoCustomer | currency: 'INR'}}
+  </div>
+  <div style="float:right">
+    <button style="float:right" (click)="goToDetails(item)">Add</button>
+  </div>
+</div>
+

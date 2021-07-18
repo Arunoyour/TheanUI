@@ -1,0 +1,10 @@
+<input type="text" placeholder="search" />
+<button>Search</button>
+<hr />
+<div *ngFor="let shop of allShops" style="float:left;border:1px black solid;text-align:center">
+  <b>{{shop.ShopName}}</b><br />
+  <img [src]="shop.ShopImage" style="height:128px;width:128px;cursor:pointer;margin-left:5px" (click)="ImageClick(shop.ShopImage)" /><br />
+  <div style="float:right">
+    <button style="float:right" (click)="goToDetails(shop)">Browse</button>
+  </div>
+</div>
