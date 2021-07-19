@@ -25,6 +25,7 @@
     "css-what": ">=5.0.1",
     "jquery": "^3.6.0",
     "jquery-ui-dist": "^1.12.1",
+    "lodash": "^4.17.21",
     "moment": "^2.29.1",
     "ng-connection-service": "^1.0.4",
     "ngx-spinner": "^11.0.1",

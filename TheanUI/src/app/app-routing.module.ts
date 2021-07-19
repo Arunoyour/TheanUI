@@ -45,7 +45,7 @@ const routes: Routes = [
   { path: 'ShopList', component: ShopListComponent },
   { path: 'ShopHome', component: ShopHomeComponent },
   { path: 'ShopItem', component: ShopItemsComponent },
-  { path: '**', redirectTo: '/registration'}
+  { path: '**', redirectTo: '/login'}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

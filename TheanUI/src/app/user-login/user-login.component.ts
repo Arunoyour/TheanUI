@@ -57,6 +57,9 @@ export class UserLoginComponent implements OnInit {
       this.spinner.show();
       this.apiService.LoginUser(this.addForm.value)
         .subscribe(data => {
+          if(data["Data"]==true)
+          {
+
           this.spinner.hide()
           console.log(data);
           if (data["Data"] == "Invalid UserName" || data["Data"] == "Invalid Password") {
@@ -75,7 +78,13 @@ export class UserLoginComponent implements OnInit {
             localStorage.setItem("CurrUser", data["Data"]);
             this.afterSuccessfulLogin();
           }
-        });
+        }
+        else  {
+          this.message = "Invalid credentials";
+        }
+      
+        
+       } );
     } else {
       this.isError = true;
       this.message = "Please enter the credentials";
