@@ -45,23 +45,19 @@ export class UserLoginComponent implements OnInit {
   ngOnInit() {
     var guid = this.rememberMe();
     if (guid != undefined) {
-      console.log("correct");
-      console.log(guid);
       this.afterSuccessfulLogin();
     }
   }
 
   onSubmit() {
-    console.log(this.addForm.value);
     if (this.addForm.valid) {
       this.spinner.show();
       this.apiService.LoginUser(this.addForm.value)
         .subscribe(data => {
-          if(data["Data"]==true)
+          if(data["Status_cd"]==true)
           {
 
           this.spinner.hide()
-          console.log(data);
           if (data["Data"] == "Invalid UserName" || data["Data"] == "Invalid Password") {
             this.isError = true;
             this.message = "Invalid credentials";
@@ -73,7 +69,6 @@ export class UserLoginComponent implements OnInit {
             if (this.addForm.controls["rememberMe"].value == true) {
               var object = { value: data["Data"], timestamp: new Date().getTime() }
               localStorage.setItem("RemMe", JSON.stringify(object));
-              console.log(data);
             }
             localStorage.setItem("CurrUser", data["Data"]);
             this.afterSuccessfulLogin();
@@ -81,6 +76,7 @@ export class UserLoginComponent implements OnInit {
         }
         else  {
           this.message = "Invalid credentials";
+          this.spinner.hide()
         }
       
         
